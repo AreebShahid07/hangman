@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5E63BA;
+    padding: 0 10px;
+}
+.guesses{
+    margin-top:10px;
+}
+
+.c {
+    width: 850px;
+    gap: 70px;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+.hangman img {
+    max-width: 270px;
+}
+.hangman h1 {
+    font-size: 1.45rem;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.words {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.letter {
+    width: 28px;
+    border-bottom: 3px solid #000;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.letter.guessed {
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+.game-box h4 b {
+    font-weight: 600;
+}
+.game-box .guesses b {
+    color: rgb(123, 11, 11);
+}
+.game-box .keyboard {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+.keyboard button {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    padding: 7px;
+    border: none;
+    background: #5E63BA;
+    text-transform: uppercase;
+    border-radius: 4px;
+    width: calc(100% / 9 - 5px);
+}
+.keyboard button[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+:where(.gamemodel, .keyboard) button:hover {
+    background: #7478c2;
+    transition: ease 0.5s;
+}
+.gamemodel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+}
+.gamemodel.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+.gamemodel .content {
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+.gamemodel img {
+    max-width: 130px;
+}
+.gamemodel h4 {
+    font-size: 1.53rem;
+    margin-bottom: 5px;
+}
+.playagain {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 3px;
+    color: #fff;
+    background: #373b8f;
+    border: none;
+    padding: 8px 15px;
+}
+.playagain:hover {
+    background: #5a5da9;
+    transition: ease 0.5s;
+}
+.gamemodel p b {
+    color: rgb(105, 34, 140);
+}
+@media (max-width: 782px) {
+    .c {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 40px;
+    }
+    .hangman img {
+        max-width: 200px;
+    }
+    .hangman h1 {
+        display: none;
+    }
+}
